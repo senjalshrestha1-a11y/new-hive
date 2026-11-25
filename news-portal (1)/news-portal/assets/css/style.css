@@ -1,0 +1,207 @@
+/* ===== Base ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #1a1a1a;
+    background: #f7f6f3;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a { color: #8a1f11; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3 { font-weight: 700; line-height: 1.25; }
+
+/* ===== Header ===== */
+.site-header {
+    background: #fff;
+    border-bottom: 3px solid #1a1a1a;
+    padding: 16px 0;
+}
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+}
+.main-nav { display: flex; gap: 18px; flex-wrap: wrap; }
+.main-nav a { color: #1a1a1a; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.search-form { display: flex; gap: 6px; }
+.search-form input {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    min-width: 180px;
+}
+.search-form button {
+    padding: 8px 14px;
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* ===== Content ===== */
+.page-content { padding: 30px 20px; min-height: 60vh; }
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.news-card {
+    background: #fff;
+    border: 1px solid #e5e2da;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.15s ease;
+}
+.news-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.08); }
+.news-card img { width: 100%; height: 170px; object-fit: cover; }
+.news-card .card-body { padding: 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.news-card .category-tag {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #8a1f11; font-weight: 700;
+}
+.news-card h3 { font-size: 19px; }
+.news-card h3 a { color: #1a1a1a; }
+.news-card .meta { font-size: 13px; color: #777; margin-top: auto; }
+.news-card p.excerpt { font-size: 14.5px; color: #444; }
+
+.article-header { margin-bottom: 20px; }
+.article-header .category-tag { font-size: 12px; text-transform: uppercase; color: #8a1f11; font-weight: 700; }
+.article-header h1 { font-size: 34px; margin: 8px 0; }
+.article-meta { font-size: 14px; color: #777; margin-bottom: 16px; }
+.article-image { width: 100%; max-height: 420px; object-fit: cover; border-radius: 6px; margin-bottom: 20px; }
+.article-body { font-size: 18px; }
+.article-body p { margin-bottom: 16px; }
+
+.pagination { display: flex; gap: 8px; margin-top: 30px; justify-content: center; flex-wrap: wrap; }
+.pagination a, .pagination span {
+    padding: 8px 14px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;
+}
+.pagination .current { background: #1a1a1a; color: #fff; }
+
+.empty-state { text-align: center; padding: 60px 20px; color: #777; }
+
+/* ===== Footer ===== */
+.site-footer {
+    background: #1a1a1a;
+    color: #ccc;
+    text-align: center;
+    padding: 24px 0;
+    margin-top: 40px;
+}
+.site-footer a { color: #fff; }
+
+/* ===== Forms (shared: login + admin forms) ===== */
+.form-card {
+    background: #fff;
+    max-width: 420px;
+    margin: 60px auto;
+    padding: 32px;
+    border-radius: 8px;
+    border: 1px solid #e5e2da;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+.form-card h1 { font-size: 22px; margin-bottom: 20px; text-align: center; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 15px;
+}
+.form-group textarea { min-height: 220px; resize: vertical; }
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #8a1f11;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+.btn:hover { background: #6f1a0d; text-decoration: none; }
+.btn-secondary { background: #555; }
+.btn-danger { background: #b3261e; }
+.btn-small { padding: 6px 12px; font-size: 13px; }
+
+.alert {
+    padding: 12px 16px;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+.alert-error { background: #fdecea; color: #a12622; border: 1px solid #f3c2be; }
+.alert-success { background: #e9f7ef; color: #1e6b3c; border: 1px solid #b7e4c7; }
+
+/* ===== Admin layout ===== */
+.admin-body { background: #f1f0ec; font-family: Arial, Helvetica, sans-serif; }
+.admin-header {
+    background: #1a1a1a; color: #fff;
+    padding: 14px 0;
+}
+.admin-header .container { display: flex; justify-content: space-between; align-items: center; }
+.admin-header a { color: #fff; }
+.admin-header .admin-logo { font-weight: 700; font-size: 18px; }
+.admin-nav { display: flex; gap: 16px; align-items: center; }
+
+.admin-content { padding: 30px 20px; }
+.admin-content h1 { font-family: Arial, sans-serif; font-size: 24px; margin-bottom: 20px; }
+
+.stats-row { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
+.stat-card {
+    background: #fff; border-radius: 6px; padding: 20px; flex: 1; min-width: 160px;
+    border: 1px solid #e0ddd5;
+}
+.stat-card .stat-num { font-size: 28px; font-weight: 700; }
+.stat-card .stat-label { font-size: 13px; color: #777; text-transform: uppercase; }
+
+table.admin-table {
+    width: 100%; border-collapse: collapse; background: #fff;
+    border-radius: 6px; overflow: hidden; font-size: 14px;
+}
+table.admin-table th, table.admin-table td {
+    padding: 12px 14px; text-align: left; border-bottom: 1px solid #eee;
+}
+table.admin-table th { background: #f5f4f0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+table.admin-table .status-draft { color: #a1690a; font-weight: 600; }
+table.admin-table .status-published { color: #1e6b3c; font-weight: 600; }
+.action-links { display: flex; gap: 10px; }
+
+.top-bar-actions { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
+
+@media (max-width: 640px) {
+    .header-inner { flex-direction: column; align-items: stretch; }
+    .main-nav { justify-content: center; }
+}
